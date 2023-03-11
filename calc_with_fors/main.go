@@ -98,3 +98,16 @@ func calcular7(ms []M) (res float64) {
 	}
 	return
 }
+
+func calcular8(ms []M) (res float64) {
+
+	for i := 0; i < len(ms); i++ {
+		res += ms[i].Valor
+		if ms[i].Tipo == 1 {
+			res -= ms[i].Valor
+			res -= ms[i].Valor
+		}
+
+	}
+	return
+}

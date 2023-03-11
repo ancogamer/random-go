@@ -124,3 +124,18 @@ func BenchmarkCalcular7_240K(b *testing.B) {
 		calcular7(ms)
 	}
 }
+
+func BenchmarkCalcular8_240K(b *testing.B) {
+	ms := make([]M, 240_000)
+	for i := range ms {
+		ms[i] = M{
+			Tipo:  rand.Intn(4),
+			Valor: rand.Float64(),
+		}
+	}
+	b.ResetTimer()
+
+	for i := 0; i < b.N; i++ {
+		calcular8(ms)
+	}
+}
